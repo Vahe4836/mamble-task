@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import StartPageText from './StartPageTextComponent/StartPageText';
+import Main from './Main/Main';
 
 function App() {
   return (
     <div className="App">
-      <StartPageText />
+      <Main />
     </div>
   );
 }

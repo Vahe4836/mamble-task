@@ -1,24 +1,33 @@
 .start_page_text_div {
-    
+
+    // height: 20vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
     .first_paragraph {
 
-        font-family: 'Poppins';
+        margin: 0px;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
         line-height: 36px;
+        color: #ACACAC;
 
         /* identical to box height */
 
         letter-spacing: 0.2px;
-        text-transform: capitalize;
+        // text-transform: capitalize;
 
-        color: #ACACAC;
     }
 
     .second_paragraph {
 
-        font-family: 'Poppins';
+        margin: 0px;
+        font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 36px;
@@ -26,7 +35,7 @@
         /* identical to box height */
 
         letter-spacing: 0.002em;
-        text-transform: capitalize;
+        // text-transform: capitalize;
 
         color: #666666;
     }
