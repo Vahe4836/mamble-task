@@ -1,0 +1,42 @@
+.hide_completed_div {
+
+    width: 83vw;
+    height: 20vh;
+    // background-color: coral;
+
+    .hide_completed {
+
+        display: flex;
+        justify-content: end;
+        vertical-align: bottom;
+        align-items: flex-end;
+        height: 100%;
+
+        .hide_completed_checkbox {
+            width: 18px;
+            height: 18px;
+            background: #008594;
+            border: #008594 8px solid;
+        }
+
+        .hide_completed_checkbox::before {
+            background: #008594;
+        }
+
+        .hide_completed_text {
+            font-family: 'Poppins', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 27px;
+            /* identical to box height */
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+    }
+
+
+
+}
