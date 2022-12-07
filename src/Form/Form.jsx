@@ -2,16 +2,20 @@ import './Form.scss';
 
 
 
-export default function Form(){
-    return(
+export default function Form() {
+    return (
         <div className="form">
-            {/* Task */}
-            {/* <form onChange={(evt) => { */}
-                {/* evt.preventDefault();
-            }}> */}
-                <input type="text" placeholder="Write here" className="form_input" />
+            <form onChange={(evt) => {
+                evt.preventDefault();
+            }}>
+
+                <p className='task_title'>Task</p>
+
+                <input type="text" placeholder="Write here" className="form_input" id='taskName' maxLength={54} />
+
+
                 <button className="form_button">Add</button>
-            {/* </form> */}
+            </form>
         </div>
     )
 }

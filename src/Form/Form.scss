@@ -3,8 +3,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90vw;
-    height: 50vh;
+    // width: 90vw;
+    // height: 20vh;
+    margin: 0;
+
+    .task_title {
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        text-transform: capitalize;
+        color: #174348;
+        margin: 0;
+    }
 
     .form_input {
         width: 67vw;
@@ -15,7 +27,7 @@
         font-size: 20px;
         margin-right: 25px;
         outline: none;
-        padding-inline-start: 20px;
+        padding-inline-start: 12px;
     }
 
     .form_input::placeholder {
@@ -24,7 +36,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 27px;
+        // line-height: 27px;
         /* identical to box height */
 
         // text-transform: capitalize;
@@ -42,8 +54,8 @@
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
-        line-height: 28px;
-        // padding: 0px;
+        // line-height: 27px;
+        padding: 0px;
         color: white;
     }
 

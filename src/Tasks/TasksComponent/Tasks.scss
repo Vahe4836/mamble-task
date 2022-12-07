@@ -1,0 +1,12 @@
+.tasks_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // width: 95vw;
+    background-color: #333;
+    .task{
+        width: 80vw;
+        height: 7vh;
+        background-color: #555;
+    }
+}
