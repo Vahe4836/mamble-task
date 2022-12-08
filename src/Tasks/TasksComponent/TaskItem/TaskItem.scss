@@ -1,0 +1,37 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    height: 7vh;
+    border-bottom: #E5E5E5 1px solid;
+
+
+    .task_completed {
+        width: 18px;
+        height: 18px;
+    }
+
+    .task_text {
+        // display: flex;
+        // justify-content: flex-start;
+        width: 70vw;
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .delete_button {
+        background-image: url("../../../Icons/Vector.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 14px;
+        height: 14px;
+        // user-select: none;
+        cursor: pointer;
+    }
+
+}

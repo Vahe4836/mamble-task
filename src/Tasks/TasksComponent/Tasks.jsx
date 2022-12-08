@@ -1,17 +1,22 @@
+import TaskItem from './TaskItem/TaskItem';
 import './Tasks.scss';
 
 
-export default function Tasks() {
+export default function Tasks({ todos, onDelete, onChange }) {
     return (
         <div className='tasks_div'>
-            <div className='task'>
-                <input type="checkbox" className='task_completed' />
-                <div className='task_text'>
-                    <p>Web development, C++ developer, Javascript developer</p>
-                </div>
-                <button className='delete_button'>x</button>
-            </div>
-
+            {
+                todos.map((todo) => {
+                    return (
+                        <TaskItem
+                            key={todo.id}
+                            todo={todo}
+                            onChange={onChange}
+                            onDelete={onDelete}
+                        />
+                    )
+                })
+            }
         </div>
     )
 }

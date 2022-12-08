@@ -1,41 +1,9 @@
 .tasks_div {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     // width: 95vw;
-    background-color: #333;
-
-    .task {
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
-        width: 80vw;
-        height: 7vh;
-        background-color: #555;
-
-        .task_completed{
-            width: 18px;
-            height: 18px;
-        }
-
-        .tasks_text {
-            display: flex;
-            justify-content: flex-start;
-            width: 70vw;
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 32px;
-            color: #666666;
-        }
-
-        .delete_button{
-            width: 13px;
-            height: 13px;
-        }
-
-    }
-
+    // background-color: #333;
 
 }
