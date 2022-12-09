@@ -1,13 +1,14 @@
-import { useState, useReducer } from "react";
+import { useState,useReducer } from "react";
 import Form from "../Form/Form";
 import HideCompleted from "../HideCompletedComponent/HideCompleted";
-import PopUp from "../PopUpComponent/PopUp";
+// import PopUp from "../PopUpComponent/PopUp";
+// import PopUpOpacity from "../PopUpOpacity.jsx/PopUpOpacity";
 import TasksComponent from "../Tasks/TasksComponent";
 import './Main.scss';
 
 
 
-function reducer(state, action) {
+function reducer(state,action) {
     if (action.type === "add") {
         return [
             {
@@ -19,7 +20,7 @@ function reducer(state, action) {
         ];
     } else if (action.type === "delete") {
         return state.filter((t) => t.id !== action.payload.id);
-    } else if (action.type === "clear-completed") {
+    } else if (action.type === "hide-completed") {
         return state.filter((todo) => !todo.isCompleted);
     } else if (action.type === "update") {
         return state.map((todo) => {
@@ -35,7 +36,7 @@ function reducer(state, action) {
 
 export default function Main() {
 
-    const [todos, dispatch] = useReducer(reducer, [
+    const [todos,dispatch] = useReducer(reducer,[
         // {
         //     id: Math.random(),
         //     text: "Learn JS",
@@ -53,17 +54,28 @@ export default function Main() {
         // }
     ]);
 
-    const [openPopUp, setOpenPopUp] = useState(false);
+    const [openPopUp,setOpenPopUp] = useState(false);
 
+    // const [todo,setTodo] = useState();
 
 
     return (
         <>
-
-            <PopUp 
+            {/* <PopUp
                 openPopUp={openPopUp}
                 setOpenPopUp={setOpenPopUp}
-            />
+
+                todo={todo}
+
+                onDelete={(todo) => {
+                    dispatch({
+                        type: "delete",
+                        payload: {
+                            id: todo.id
+                        }
+                    });
+                }}
+            /> */}
 
             <div className="main_div">
                 <div className="main">
@@ -72,7 +84,7 @@ export default function Main() {
                         todos={todos}
                         onClearCompleted={() => {
                             dispatch({
-                                type: "clear-completed"
+                                type: "hide-completed"
                             });
                         }}
                     />
@@ -91,23 +103,24 @@ export default function Main() {
                     <TasksComponent
 
                         todos={todos}
+                        // setTodo={setTodo}
                         openPopUp={openPopUp}
                         setOpenPopUp={setOpenPopUp}
-
-                        onDelete={(todo) => {
-                            dispatch({
-                                type: "delete",
-                                payload: {
-                                    id: todo.id
-                                }
-                            });
-                        }}
 
                         onChange={(newTodo) => {
                             dispatch({
                                 type: "update",
                                 payload: {
                                     updatedTodo: newTodo
+                                }
+                            });
+                        }}
+
+                        onDelete={(todo) => {
+                            dispatch({
+                                type: "delete",
+                                payload: {
+                                    id: todo.id
                                 }
                             });
                         }}

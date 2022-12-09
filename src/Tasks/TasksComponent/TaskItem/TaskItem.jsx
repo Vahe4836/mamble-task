@@ -30,7 +30,7 @@ export default function TaskItem({ todo, todos, openPopUp, setOpenPopUp, onChang
 
                 <div
                     onClick={() => {
-                        onDelete(todo);
+                        // onDelete(todo);
                         setOpenPopUp(true)
                     }}
                     className='delete_button'
