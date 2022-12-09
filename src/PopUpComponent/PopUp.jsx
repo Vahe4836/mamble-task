@@ -2,7 +2,7 @@ import './PopUp.scss';
 
 
 
-export default function PopUp({ openPopUp, setOpenPopUp, onDelete, todo }) {
+export default function PopUp({ todo, openPopUp, setOpenPopUp, onDelete }) {
     return (
         <div
             className="pop_up_opacity_div"
@@ -24,7 +24,7 @@ export default function PopUp({ openPopUp, setOpenPopUp, onDelete, todo }) {
                                     onClick={() => {
                                         onDelete(todo)
                                         setOpenPopUp(false)
-                                    }}
+                                    }} 
                                 >Yes</p>
                                 <p
                                     className="pop_up_answer_text"

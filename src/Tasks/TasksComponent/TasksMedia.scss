@@ -1,0 +1,26 @@
+// Imports
+
+@import '../../Media_SCSS/Breakpoints.scss';
+@import '../../Media_SCSS/Variables.scss';
+
+// Media
+
+// @include desktop{
+
+// }
+
+// @include Ipad_pro{
+
+// }
+
+@include Laptop {
+    .tasks_div {
+        width: 95vw;
+    }
+}
+
+@include Bg_mobile {
+    .tasks_div {
+        width: 97vw;
+    }
+}

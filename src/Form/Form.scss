@@ -11,6 +11,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 90vw;
 
         .task_title {
             font-family: 'Poppins', sans-serif;
@@ -41,12 +42,8 @@
             font-style: normal;
             font-weight: 400;
             font-size: 18px;
-            // line-height: 27px;
-            /* identical to box height */
-
-            // text-transform: capitalize;
-
             color: #DFDFDF;
+
         }
 
         .form_button {
@@ -65,11 +62,9 @@
             cursor: pointer;
         }
 
-
     }
 
     .error_text {
-        // visibility: ;
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -77,5 +72,6 @@
         line-height: 18px;
         color: #FF3104;
         margin: 0.5em 0 4em 0;
+        // width: 70vw;
     }
 }

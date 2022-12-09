@@ -5,6 +5,7 @@ import HideCompleted from "../HideCompletedComponent/HideCompleted";
 // import PopUpOpacity from "../PopUpOpacity.jsx/PopUpOpacity";
 import TasksComponent from "../Tasks/TasksComponent";
 import './Main.scss';
+import './MainMedia.scss';
 
 
 
@@ -21,7 +22,11 @@ function reducer(state,action) {
     } else if (action.type === "delete") {
         return state.filter((t) => t.id !== action.payload.id);
     } else if (action.type === "hide-completed") {
-        return state.filter((todo) => !todo.isCompleted);
+        return state.map((todo) => {
+            if(todo.isCompleted){
+                todo.display = 'none'
+            }
+        });
     } else if (action.type === "update") {
         return state.map((todo) => {
             if (todo.id === action.payload.updatedTodo.id) {
@@ -37,21 +42,21 @@ function reducer(state,action) {
 export default function Main() {
 
     const [todos,dispatch] = useReducer(reducer,[
-        // {
-        //     id: Math.random(),
-        //     text: "Learn JS",
-        //     isCompleted: false
-        // },
-        // {
-        //     id: Math.random(),
-        //     text: "Learn CSS",
-        //     isCompleted: false
-        // },
-        // {
-        //     id: Math.random(),
-        //     text: "Learn React",
-        //     isCompleted: false
-        // }
+        {
+            id: Math.random(),
+            text: "Learn JS",
+            isCompleted: false
+        },
+        {
+            id: Math.random(),
+            text: "Learn CSS",
+            isCompleted: false
+        },
+        {
+            id: Math.random(),
+            text: "Learn React",
+            isCompleted: false
+        }
     ]);
 
     const [openPopUp,setOpenPopUp] = useState(false);
@@ -82,7 +87,7 @@ export default function Main() {
 
                     <HideCompleted
                         todos={todos}
-                        onClearCompleted={() => {
+                        onHideCompleted={() => {
                             dispatch({
                                 type: "hide-completed"
                             });

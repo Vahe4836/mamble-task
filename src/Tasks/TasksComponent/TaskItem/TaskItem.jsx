@@ -1,5 +1,5 @@
-// import { useState } from 'react';
 import './TaskItem.scss';
+import './TaskItemMedia.scss';
 
 
 
@@ -7,12 +7,15 @@ export default function TaskItem({ todo, todos, openPopUp, setOpenPopUp, onChang
 
     // const [openPopUp, setOpenPopUp] = useState(false);
 
+
     return (
         <div className='task_div'>
             <div className='task'>
                 <input
                     type="checkbox"
                     checked={todo.isCompleted}
+                    className={ todo.isCompleted ? 'task_completed_checkbox_false' : 'task_completed_checkbox_true'}
+                    // style={{ background: URL(todo.isCompleted ? '../../../Icons/checkboxFalse.png' : '../../../Icons/checkboxTrue.png') }}
                     onChange={(evt) => {
                         onChange({
                             ...todo,
@@ -20,17 +23,19 @@ export default function TaskItem({ todo, todos, openPopUp, setOpenPopUp, onChang
                         });
                         // setOpenPopUp(true);
                     }}
-                    className='task_completed_checkbox'
                 />
 
 
                 <div className='task_text'>
-                    <p className='task_text_paragraph'>{todo.text}</p>
+                    <p
+                        className='task_text_paragraph'
+                        style={{color: !todo.isCompleted ? '#666666' : '#ACACAC'}}
+                    >{todo.text}</p>
                 </div>
 
                 <div
                     onClick={() => {
-                        // onDelete(todo);
+                        // onDelete(todo)
                         setOpenPopUp(true)
                     }}
                     className='delete_button'

@@ -1,0 +1,28 @@
+// Imports
+
+@import '../../../Media_SCSS/Breakpoints.scss';
+@import '../../../Media_SCSS/Variables.scss';
+
+// Media
+
+@include Laptop {
+    .task_div{
+        width: 85vw;
+        .task{
+            width: 80vw;
+        }
+    }
+}
+
+
+@include Bg_mobile(){
+    .task_div{
+        width: 85vw;
+        .task{
+            width: 86vw;
+            .task_text{
+                width: 72vw;
+            }
+        }
+    }
+}

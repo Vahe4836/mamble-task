@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Form.scss';
-
+import './FormMedia.scss';
 
 
 export default function Form({ onAdd }) {
@@ -11,39 +11,73 @@ export default function Form({ onAdd }) {
 
     return (
 
+        
+
         <div className='form_div'>
+
+
+        {/* Skzbuuuum havaaaqeeel diverov heto media */}
+
+
             <div className="form">
-                <form onSubmit={(evt) => {
-                    evt.preventDefault();
-                    { ((!errormsg) && text.length !== 0) && onAdd(text); setText("") }
-                }}>
+                {/* <div className='form_elements'> */}
+                    <form onSubmit={(evt) => {
+                        evt.preventDefault();
+                        { ((!errormsg) && text.length !== 0) && onAdd(text); setText("") }
+                    }}>
 
-                    <p className='task_title'>Task</p>
+                        {/* <div className='task_title_div'> */}
+                            <p className='task_title'>Task</p>
+                        {/* </div> */}
 
-                    <input
-                        type="text"
-                        value={text}
-                        placeholder="Write here"
-                        className="form_input"
-                        onChange={(evt) => {
-                            setText(evt.target.value);
-                            setErrorMsg(evt.target.value.length >= 10);
-                        }}
-                        style={{ border: errormsg ? '1px solid #FF3104' : '1px solid #FFCD04' }}
-                    />
 
-                    <button
-                        className="form_button"
-                        style={{opacity: errormsg ? '0.5' : '1'}}
-                        disabled={errormsg}
-                    >Add</button>
-                </form>
+                        {/* <div className='form_input_div'> */}
+                            <input
+                                type="text"
+                                value={text}
+                                placeholder="Write here"
+                                className="form_input"
+                                onChange={(evt) => {
+                                    setText(evt.target.value);
+                                    setErrorMsg(evt.target.value.length >= 54);
+                                }}
+                                style={{ border: errormsg ? '1px solid #FF3104' : '1px solid #FFCD04' }}
+                            />
+
+                        {/* </div> */}
+
+
+                        {/* <div className='form_button_div_flex'> */}
+                            {/* <div className='form_button_div'>  */}
+                                <button
+                                    className="form_button"
+                                    style={{ opacity: errormsg ? '0.5' : '1' }}
+                                    disabled={errormsg}
+                                >Add</button>
+                            {/* </div> */}
+                        {/* </div> */}
+
+                        {/* <div className='error_text_div_flex'> */}
+                            <div className='error_text_div'> 
+                                <span className="error_text" style={{ visibility: errormsg ? 'visible' : 'hidden' }} >
+                                    Task content can contain max 54 characters.
+                                </span>
+                            </div>
+                        { /*</div> */}
+
+
+
+
+
+                    </form>
+                {/* </div> */}
+
 
             </div>
 
-            <span className="error_text" style={{ visibility: errormsg ? 'visible' : 'hidden' }} >
+            {/* <span className="error_text" style={{ visibility: errormsg ? 'visible' : 'hidden' }} >
                 Task content can contain max 54 characters.
-            </span>
+            </span> */}
 
         </div>
 
