@@ -1,6 +1,7 @@
-import { useReducer } from "react";
+import { useState, useReducer } from "react";
 import Form from "../Form/Form";
 import HideCompleted from "../HideCompletedComponent/HideCompleted";
+import PopUp from "../PopUpComponent/PopUp";
 import TasksComponent from "../Tasks/TasksComponent";
 import './Main.scss';
 
@@ -52,54 +53,68 @@ export default function Main() {
         // }
     ]);
 
+    const [openPopUp, setOpenPopUp] = useState(false);
+
+
 
     return (
-        <div className="main_div">
-            <div className="main">
+        <>
 
-                <HideCompleted
-                    todos={todos}
-                    onClearCompleted={() => {
-                        dispatch({
-                            type: "clear-completed"
-                        });
-                    }}
-                />
+            <PopUp 
+                openPopUp={openPopUp}
+                setOpenPopUp={setOpenPopUp}
+            />
 
-                <Form
-                    onAdd={(text) => {
-                        dispatch({
-                            type: 'add',
-                            payload: {
-                                text: text
-                            }
-                        });
-                    }}
-                />
+            <div className="main_div">
+                <div className="main">
 
-                <TasksComponent
+                    <HideCompleted
+                        todos={todos}
+                        onClearCompleted={() => {
+                            dispatch({
+                                type: "clear-completed"
+                            });
+                        }}
+                    />
 
-                    todos={todos}
+                    <Form
+                        onAdd={(text) => {
+                            dispatch({
+                                type: 'add',
+                                payload: {
+                                    text: text
+                                }
+                            });
+                        }}
+                    />
 
-                    onDelete={(todo) => {
-                        dispatch({
-                            type: "delete",
-                            payload: {
-                                id: todo.id
-                            }
-                        });
-                    }}
+                    <TasksComponent
 
-                    onChange={(newTodo) => {
-                        dispatch({
-                            type: "update",
-                            payload: {
-                                updatedTodo: newTodo
-                            }
-                        });
-                    }}
-                />
+                        todos={todos}
+                        openPopUp={openPopUp}
+                        setOpenPopUp={setOpenPopUp}
+
+                        onDelete={(todo) => {
+                            dispatch({
+                                type: "delete",
+                                payload: {
+                                    id: todo.id
+                                }
+                            });
+                        }}
+
+                        onChange={(newTodo) => {
+                            dispatch({
+                                type: "update",
+                                payload: {
+                                    updatedTodo: newTodo
+                                }
+                            });
+                        }}
+
+                    />
+                </div>
             </div>
-        </div>
+        </>
     )
 }

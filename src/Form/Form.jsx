@@ -3,41 +3,48 @@ import './Form.scss';
 
 
 
-export default function Form({onAdd}) {
+export default function Form({ onAdd }) {
 
     const [text, setText] = useState("");
+
+    const [errormsg, setErrorMsg] = useState(false);
 
     return (
 
         <div className='form_div'>
             <div className="form">
-                <form onSubmit={(e) => {
-                        e.preventDefault();
-                        onAdd(text);
-                        setText("");
+                <form onSubmit={(evt) => {
+                    evt.preventDefault();
+                    { ((!errormsg) && text.length !== 0) && onAdd(text); setText("") }
                 }}>
 
-                <p className='task_title'>Task</p>
+                    <p className='task_title'>Task</p>
 
-                <input
-                    type="text"
-                    value={text}
-                    maxLength={54}
-                    placeholder="Write here"
-                    className="form_input"
-                    onChange={(evt) => {
-                        setText(evt.target.value);
-                    }}
-                />
-                {/* <span>Task content can contain max 54 characters.</span> */}
-                
+                    <input
+                        type="text"
+                        value={text}
+                        placeholder="Write here"
+                        className="form_input"
+                        onChange={(evt) => {
+                            setText(evt.target.value);
+                            setErrorMsg(evt.target.value.length >= 10);
+                        }}
+                        style={{ border: errormsg ? '1px solid #FF3104' : '1px solid #FFCD04' }}
+                    />
 
-                <button className="form_button">Add</button>
-                {/* <span>Task content can contain max 54 characters.</span> */}
+                    <button
+                        className="form_button"
+                        style={{opacity: errormsg ? '0.5' : '1'}}
+                        disabled={errormsg}
+                    >Add</button>
                 </form>
-                {/* <span>Task content can contain max 54 characters.</span> */}
+
             </div>
-                    <span>Task content can contain max 54 characters.</span>
+
+            <span className="error_text" style={{ visibility: errormsg ? 'visible' : 'hidden' }} >
+                Task content can contain max 54 characters.
+            </span>
+
         </div>
 
     )

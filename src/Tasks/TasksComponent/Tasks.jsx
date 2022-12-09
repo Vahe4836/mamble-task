@@ -2,7 +2,8 @@ import TaskItem from './TaskItem/TaskItem';
 import './Tasks.scss';
 
 
-export default function Tasks({ todos, onDelete, onChange }) {
+export default function Tasks({ todos, openPopUp, setOpenPopUp, onDelete, onChange }) {
+
     return (
         <div className='tasks_div'>
             {
@@ -10,6 +11,9 @@ export default function Tasks({ todos, onDelete, onChange }) {
                     return (
                         <TaskItem
                             key={todo.id}
+                            // todos={todos}
+                            openPopUp={openPopUp}
+                            setOpenPopUp={setOpenPopUp}
                             todo={todo}
                             onChange={onChange}
                             onDelete={onDelete}
