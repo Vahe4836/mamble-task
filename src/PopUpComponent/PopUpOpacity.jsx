@@ -3,7 +3,7 @@ import './PopUpOpacity.scss';
 
 
 
-export default function PopUpOpacity({ todos,openPopUp,setOpenPopUp,onDelete }) {
+export default function PopUpOpacity({ storedTodos, openPopUp,setOpenPopUp,onDelete }) {
 
 
     return (
@@ -16,7 +16,7 @@ export default function PopUpOpacity({ todos,openPopUp,setOpenPopUp,onDelete }) 
         >
 
             {
-                todos.map((todo) => {
+                storedTodos.map((todo) => {
                     return (
                         <>
                             <PopUp

@@ -3,9 +3,8 @@ import './TaskItemMedia.scss';
 
 
 
-export default function TaskItem({ todo, display, todos, openPopUp, setOpenPopUp, onChange, onDelete }) {
+export default function TaskItem({ todo, display, todos, openPopUp, setOpenPopUp, onChange }) {
 
-    // const [openPopUp, setOpenPopUp] = useState(false);
 
 
     return (
@@ -36,7 +35,6 @@ export default function TaskItem({ todo, display, todos, openPopUp, setOpenPopUp
 
                 <div
                     onClick={() => {
-                        // onDelete(todo)
                         setOpenPopUp(!openPopUp)
                     }}
                     className='delete_button'

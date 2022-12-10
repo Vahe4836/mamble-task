@@ -2,16 +2,11 @@ import './PopUp.scss';
 
 
 
-export default function PopUp({ todo,todos,openPopUp,onDelete,setOpenPopUp }) {
-    return (
-        // <div
-        //     className="pop_up_opacity_div"
-        //     style={{display: openPopUp ? "block" : "none" }}
-        //     onClick={() => {
-        //         setOpenPopUp(false)
-        //     }}
-        // >
+export default function PopUp({ todo,openPopUp,onDelete,setOpenPopUp }) {
 
+
+
+    return (
         <div className="pop_up_div" >
             <div className='pop_up_elemets_flex'>
                 <div className='pop_up_elements'>
@@ -38,6 +33,5 @@ export default function PopUp({ todo,todos,openPopUp,onDelete,setOpenPopUp }) {
                 </div>
             </div>
         </div>
-        // </div>
     )
 }

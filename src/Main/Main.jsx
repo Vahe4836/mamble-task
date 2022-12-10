@@ -56,40 +56,24 @@ function reducer(state,action) {
 
 export default function Main() {
 
-    const [todos,dispatch] = useReducer(reducer,[]);
+
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+
+    const [todos,dispatch] = useReducer(reducer, storedTodos);
 
     const [openPopUp,setOpenPopUp] = useState(false);
 
     const [hiden,setHiden] = useState(false);
 
-    // const [storedTodos, setStoredTodos] = useState();   
+    localStorage.setItem("todos",JSON.stringify(todos));
 
-    // useEffect(() => {
-    //     localStorage.setItem("todos", JSON.stringify(todos));
-    // }, [todos.length]);
-
-    // localStorage.setItem("todos", JSON.stringify(todos));
-
-
-    // const [storedTodos, setStoredTodos] = useState(todos);
-
-    // setStoredTodos(JSON.parse(localStorage.getItem("todos")))
-
-    // let ob = localStorage.getItem("todos");
-
-    // let loc = Object.values(ob)
-
-    // let storedTodos = JSON.parse(localStorage.getItem("todos"));
-
-    // alert(storedTodos);
 
 
     return (
         <>
-
             <PopUpOpacity
-                todos={todos}
 
+                storedTodos={storedTodos}
                 openPopUp={openPopUp}
                 setOpenPopUp={setOpenPopUp}
 
@@ -134,9 +118,9 @@ export default function Main() {
 
                     <TasksComponent
 
-                        todos={todos}
+                        // todos={todos}
 
-                        // storedTodos={storedTodos}
+                        storedTodos={storedTodos}
                         // setStoredTodos={setStoredTodos}
                         // setTodo={setTodo}
                         openPopUp={openPopUp}

@@ -4,15 +4,15 @@ import Tasks from "./TasksComponent/Tasks";
 
 
 
-export default function TasksComponent({ todos, setTodo, openPopUp, setOpenPopUp, onChange, onDelete}) {
+export default function TasksComponent({ storedTodos, setTodo, openPopUp, setOpenPopUp, onChange, onDelete}) {
 
     // const [todosLength, setTodosLength] = useState(0);
 
     // setTodosLength(todos.length);
 
-    localStorage.setItem("todos", JSON.stringify(todos));
+    // localStorage.setItem("todos", JSON.stringify(todos));
 
-    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    // const storedTodos = JSON.parse(localStorage.getItem("todos"));
 
     return (
         <article>
@@ -20,7 +20,7 @@ export default function TasksComponent({ todos, setTodo, openPopUp, setOpenPopUp
                 storedTodos.length === 0 ?
                     <StartPageText /> :
                     <Tasks
-                        todos={todos}
+                        // todos={todos}
                         storedTodos={storedTodos}
                         // setStoredTodos={setStoredTodos}
                         // setTodo={setTodo}
