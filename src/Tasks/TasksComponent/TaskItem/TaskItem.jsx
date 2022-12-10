@@ -11,21 +11,14 @@ export default function TaskItem({ todo, display, todos, openPopUp, setOpenPopUp
     return (
         <div
             className='task_div'
-            style={
-                {
-                    display: display ? "none" : "block",
-                    // background: display ? "green" : "red"
-                }
-
-            }
+            style={{ display: display ? "none" : "block" }}
         >
-            <div
-                className='task'
-            >
+            <div className='task'>
                 <input
                     type="checkbox"
                     checked={todo.isCompleted}
-                    className={todo.isCompleted ? 'task_completed_checkbox_false' : 'task_completed_checkbox_true'}
+                    // className={todo.isCompleted ? 'task_completed_checkbox_false' : 'task_completed_checkbox_true'}
+                    className='task_completed_checkbox'
                     // style={{ background: URL(todo.isCompleted ? '../../../Icons/checkboxFalse.png' : '../../../Icons/checkboxTrue.png') }}
                     onChange={(evt) => {
                         onChange({

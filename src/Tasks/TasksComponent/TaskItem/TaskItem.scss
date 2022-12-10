@@ -13,15 +13,19 @@
         width: 78.5vw;
         height: 7vh;
 
-        .task_completed_checkbox_false {
+        input[type="checkbox"]{
+            appearance: none;
+            border: 2px #008594 solid;
+            border-radius: 4px;
             width: 18px;
             height: 18px;
-            background: url('../../../Icons/checkboxFalse.png');
-            z-index: 3;
         }
 
-        .task_completed_checkbox_true {
-            background: url('../../../Icons/checkboxTrue.png');
+        input[type="checkbox"]:checked{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('../../../Icons/checkboxTrue.png');
         }
 
         .task_text {

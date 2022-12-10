@@ -55,26 +55,7 @@ function reducer(state, action) {
 
 export default function Main() {
 
-    const [todos, dispatch] = useReducer(reducer, [
-        {
-            id: Math.random(),
-            text: "Learn JS",
-            isCompleted: false,
-            display: false
-        },
-        {
-            id: Math.random(),
-            text: "Learn CSS",
-            isCompleted: false,
-            display: false
-        },
-        {
-            id: Math.random(),
-            text: "Learn React",
-            isCompleted: false,
-            display: false
-        }
-    ]);
+    const [todos, dispatch] = useReducer(reducer, []);
 
     const [openPopUp, setOpenPopUp] = useState(false);
 
@@ -100,6 +81,25 @@ export default function Main() {
     // let storedTodos = JSON.parse(localStorage.getItem("todos"));
 
     // alert(storedTodos);
+
+    // {
+    //     id: Math.random(),
+    //     text: "Learn JS",
+    //     isCompleted: false,
+    //     display: false
+    // },
+    // {
+    //     id: Math.random(),
+    //     text: "Learn CSS",
+    //     isCompleted: false,
+    //     display: false
+    // },
+    // {
+    //     id: Math.random(),
+    //     text: "Learn React",
+    //     isCompleted: false,
+    //     display: false
+    // }
 
 
     return (

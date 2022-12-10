@@ -1,5 +1,5 @@
 import './StartPageText.scss';
-
+import './StartPageTextMedia.scss';
 
 
 export default function StartPageText(){

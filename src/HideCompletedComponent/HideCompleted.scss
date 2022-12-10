@@ -2,7 +2,6 @@
 
     width: 83vw;
     height: 20vh;
-    // background-color: coral;
 
     .hide_completed {
 
@@ -12,31 +11,34 @@
         align-items: flex-end;
         height: 100%;
 
-        .hide_completed_checkbox {
-            width: 18px;
-            height: 18px;
-            background: #008594;
-            border: #008594 8px solid;
+        .checkbox_text_div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            input[type="checkbox"] {
+                appearance: none;
+                border: 2px #008594 solid;
+                border-radius: 4px;
+                width: 18px;
+                height: 18px;
+            }
+
+            input[type="checkbox"]:checked {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url('../Icons/checkboxTrue.png');
+            }
+
+            .hide_completed_text {
+                font-family: 'Poppins', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 17px;
+                margin-left: 0.5em;
+            }
         }
 
-        .hide_completed_checkbox:before {
-            background: #008594;
-        }
-
-        .hide_completed_text {
-            font-family: 'Poppins', sans-serif;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 27px;
-            margin-left: 0.5em;
-
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-        }
     }
-
-
 
 }

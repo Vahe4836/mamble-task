@@ -40,8 +40,6 @@ export default function Form({ onAdd }) {
                                 style={{ border: errormsg ? '1px solid #FF3104' : '1px solid #FFCD04' }}
                             />
 
-
-
                             <div className='error_text_div'>
                                 <span className="error_text" style={{ visibility: errormsg ? 'visible' : 'hidden' }} >
                                     Task content can contain max 54 characters.
