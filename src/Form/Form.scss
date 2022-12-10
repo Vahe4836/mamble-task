@@ -17,14 +17,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            // height: 52px;
             .input_task_title_error {
                 .task_title {
                     font-family: 'Poppins', sans-serif;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 18px;
-                    // line-height: 27px;
                     text-transform: capitalize;
                     color: #174348;
                     margin: 0;
@@ -33,7 +31,6 @@
                 .form_input {
                     width: 67vw;
                     height: 52px;
-                    // border: 1px solid #FFCD04;
                     border-radius: 4px;
                     box-sizing: border-box;
                     font-size: 18px;
@@ -60,9 +57,7 @@
                     line-height: 18px;
                     color: #FF3104;
                     margin: 0.5em 0 4em 0;
-                    // width: 70vw;
                 }
-    
     
             }
     
@@ -76,16 +71,12 @@
                 font-style: normal;
                 font-weight: 500;
                 font-size: 18px;
-                // line-height: 27px;
                 padding: 0px;
                 color: white;
                 cursor: pointer;
             }
         }
 
-        
-
     }
-
 
 }

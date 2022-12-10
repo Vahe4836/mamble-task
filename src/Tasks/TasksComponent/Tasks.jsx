@@ -16,12 +16,12 @@ export default function Tasks({ storedTodos, setTodo, openPopUp, setOpenPopUp, o
 
                     return (
                         <>
-                            <PopUp
+                            {/* <PopUp
                                 openPopUp={openPopUp}
                                 setOpenPopUp={setOpenPopUp}
                                 onDelete={onDelete}
                                 todo={todo}
-                            />
+                            /> */}
 
                             <TaskItem
                                 key={todo.id}
@@ -31,6 +31,7 @@ export default function Tasks({ storedTodos, setTodo, openPopUp, setOpenPopUp, o
                                 setOpenPopUp={setOpenPopUp}
                                 todo={todo}
                                 onChange={onChange}
+                                // onDelete={onDelete}
                             />
 
                         </>

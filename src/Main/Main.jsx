@@ -1,15 +1,16 @@
-import { useState, useEffect, useReducer } from "react";
+import { useState,useEffect,useReducer } from "react";
 import Form from "../Form/Form";
 import HideCompleted from "../HideCompletedComponent/HideCompleted";
+import PopUp from "../PopUpComponent/PopUp";
+import PopUpOpacity from "../PopUpComponent/PopUpOpacity";
 // import PopUp from "../PopUpComponent/PopUp";
 // import PopUpOpacity from "../PopUpOpacity.jsx/PopUpOpacity";
 import TasksComponent from "../Tasks/TasksComponent";
 import './Main.scss';
-import './MainMedia.scss';
 
 
 
-function reducer(state, action) {
+function reducer(state,action) {
     if (action.type === "add") {
         return [
             {
@@ -55,11 +56,11 @@ function reducer(state, action) {
 
 export default function Main() {
 
-    const [todos, dispatch] = useReducer(reducer, []);
+    const [todos,dispatch] = useReducer(reducer,[]);
 
-    const [openPopUp, setOpenPopUp] = useState(false);
+    const [openPopUp,setOpenPopUp] = useState(false);
 
-    const [hiden, setHiden] = useState(false);
+    const [hiden,setHiden] = useState(false);
 
     // const [storedTodos, setStoredTodos] = useState();   
 
@@ -104,11 +105,12 @@ export default function Main() {
 
     return (
         <>
-            {/* <PopUp
+
+            <PopUpOpacity
+                todos={todos}
+
                 openPopUp={openPopUp}
                 setOpenPopUp={setOpenPopUp}
-
-                todo={todo}
 
                 onDelete={(todo) => {
                     dispatch({
@@ -118,14 +120,14 @@ export default function Main() {
                         }
                     });
                 }}
-            /> */}
+
+            />
+
 
             <div className="main_div">
                 <div className="main">
 
                     <HideCompleted
-                        // todos={todos}
-                        // storedTodos={storedTodos}
                         hiden={hiden}
                         setHiden={setHiden}
                         onHideCompleted={(hiden) => {
@@ -164,15 +166,6 @@ export default function Main() {
                                 type: "update",
                                 payload: {
                                     updatedTodo: newTodo
-                                }
-                            });
-                        }}
-
-                        onDelete={(todo) => {
-                            dispatch({
-                                type: "delete",
-                                payload: {
-                                    id: todo.id
                                 }
                             });
                         }}

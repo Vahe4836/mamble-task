@@ -17,15 +17,12 @@ export default function TaskItem({ todo, display, todos, openPopUp, setOpenPopUp
                 <input
                     type="checkbox"
                     checked={todo.isCompleted}
-                    // className={todo.isCompleted ? 'task_completed_checkbox_false' : 'task_completed_checkbox_true'}
                     className='task_completed_checkbox'
-                    // style={{ background: URL(todo.isCompleted ? '../../../Icons/checkboxFalse.png' : '../../../Icons/checkboxTrue.png') }}
                     onChange={(evt) => {
                         onChange({
                             ...todo,
                             isCompleted: evt.target.checked
                         });
-                        // setOpenPopUp(true);
                     }}
                 />
 
@@ -40,7 +37,7 @@ export default function TaskItem({ todo, display, todos, openPopUp, setOpenPopUp
                 <div
                     onClick={() => {
                         // onDelete(todo)
-                        setOpenPopUp(true)
+                        setOpenPopUp(!openPopUp)
                     }}
                     className='delete_button'
                 ></div>

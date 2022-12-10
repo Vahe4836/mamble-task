@@ -3,7 +3,7 @@ import './HideCompletedMedia.scss';
 
 
 
-export default function HideCompleted({ onHideCompleted, hiden, setHiden, }) {
+export default function HideCompleted({ onHideCompleted,hiden,setHiden,}) {
     return (
         <div className='hide_completed_div'>
             <div className='hide_completed'>
@@ -15,9 +15,7 @@ export default function HideCompleted({ onHideCompleted, hiden, setHiden, }) {
                         onChange={(evt) => {
                             onHideCompleted(hiden);
                             setHiden(evt.target.checked);
-                        }
-
-                        }
+                        }}
                     />
                     <span className='hide_completed_text'>Hide completed</span>
                 </div>

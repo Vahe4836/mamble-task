@@ -28,7 +28,7 @@ export default function TasksComponent({ todos, setTodo, openPopUp, setOpenPopUp
                         setOpenPopUp={setOpenPopUp}
 
                         // todosLength={todosLength}
-                        onDelete={onDelete}
+                        // onDelete={onDelete}
                         onChange={onChange}
                     /> 
             }
