@@ -83,25 +83,6 @@ export default function Main() {
 
     // alert(storedTodos);
 
-    // {
-    //     id: Math.random(),
-    //     text: "Learn JS",
-    //     isCompleted: false,
-    //     display: false
-    // },
-    // {
-    //     id: Math.random(),
-    //     text: "Learn CSS",
-    //     isCompleted: false,
-    //     display: false
-    // },
-    // {
-    //     id: Math.random(),
-    //     text: "Learn React",
-    //     isCompleted: false,
-    //     display: false
-    // }
-
 
     return (
         <>
