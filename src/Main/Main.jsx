@@ -22,10 +22,21 @@ function reducer(state,action) {
         return state.filter((t) => t.id !== action.payload.id);
     } else if (action.type === "hide-completed") {
 
-        // 
-
         return state.map((todo) => {
             if (!action.payload.hidden) {
+
+                // Yes, I know this piece of code reminds us all of one of the popular IT memes 😅, 
+                // but it works😁, and actually this is how it turned out due to my lack of time)
+
+                // What I was aiming for in this piece of code (roughly)
+
+                // if(){
+                //  return {
+                //      ...todo,
+                //  display: !(display value)
+                //  }
+                // }
+
                 if (todo.isCompleted) {
                     return {
                         ...todo,
@@ -60,7 +71,7 @@ export default function Main() {
 
     const storedTodos = JSON.parse(localStorage.getItem("todos"));
 
-    const [todos,dispatch] = useReducer(reducer, storedTodos);
+    const [todos,dispatch] = useReducer(reducer,storedTodos);
     const [openPopUp,setOpenPopUp] = useState(false);
     const [hidden,setHidden] = useState(false);
 
@@ -71,7 +82,7 @@ export default function Main() {
     return (
         <>
 
-        {/* Pop-up background component */}
+            {/* Pop-up background component */}
 
             <PopUpOpacity
 
