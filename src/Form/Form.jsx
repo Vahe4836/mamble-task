@@ -11,27 +11,26 @@ export default function Form({ onAdd }) {
 
     return (
 
-        
+
 
         <div className='form_div'>
 
 
-        {/* Skzbuuuum havaaaqeeel diverov heto media */}
+            {/* Skzbuuuum havaaaqeeel diverov heto media */}
 
 
             <div className="form">
                 {/* <div className='form_elements'> */}
-                    <form onSubmit={(evt) => {
-                        evt.preventDefault();
-                        { ((!errormsg) && text.length !== 0) && onAdd(text); setText("") }
-                    }}>
+                <form onSubmit={(evt) => {
+                    evt.preventDefault();
+                    { ((!errormsg) && text.length !== 0) && onAdd(text); setText("") }
+                }}>
 
-                        {/* <div className='task_title_div'> */}
+                    <div className='form_flex'>
+                        <div className='input_task_title_error'>
+
                             <p className='task_title'>Task</p>
-                        {/* </div> */}
 
-
-                        {/* <div className='form_input_div'> */}
                             <input
                                 type="text"
                                 value={text}
@@ -44,32 +43,28 @@ export default function Form({ onAdd }) {
                                 style={{ border: errormsg ? '1px solid #FF3104' : '1px solid #FFCD04' }}
                             />
 
-                        {/* </div> */}
 
 
-                        {/* <div className='form_button_div_flex'> */}
-                            {/* <div className='form_button_div'>  */}
-                                <button
-                                    className="form_button"
-                                    style={{ opacity: errormsg ? '0.5' : '1' }}
-                                    disabled={errormsg}
-                                >Add</button>
-                            {/* </div> */}
-                        {/* </div> */}
-
-                        {/* <div className='error_text_div_flex'> */}
-                            <div className='error_text_div'> 
+                            <div className='error_text_div'>
                                 <span className="error_text" style={{ visibility: errormsg ? 'visible' : 'hidden' }} >
                                     Task content can contain max 54 characters.
                                 </span>
                             </div>
-                        { /*</div> */}
+                        </div>
 
 
 
+                        <div className='form_button_div'>
+                            <button
+                                className="form_button"
+                                style={{ opacity: errormsg ? '0.5' : '1' }}
+                                disabled={errormsg}
+                            >Add</button>
+                        </div>
+                    </div>
 
 
-                    </form>
+                </form>
                 {/* </div> */}
 
 

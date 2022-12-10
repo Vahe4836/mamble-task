@@ -13,59 +13,40 @@
         width: 100vw;
 
         .form {
-            // display: block;
             width: 100vw;
 
-            .task_title_div {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .form_flex {
+                flex-direction: column;
 
-                .task_title {
-                    width: 70vw;
+                .task_title_div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .task_title {
+                        width: 70vw;
+                    }
                 }
-            }
 
-
-            // .form_input_div {
-            //     display: flex;
-            //     justify-content: center;
-            //     align-items: center;
-
-                // width:90vw;
                 .form_input_title {
                     display: flex;
                     flex-direction: column;
                 }
-
+    
                 .form_input {
                     width: 75vw;
                 }
-            // }
-
-            // .form_button_div_flex {
-            //     display: flex;
-            //     justify-content: center;
-
-            //     .form_button_div {
-            //         display: flex;
-            //         justify-content: flex-end;
-            //         width: 65vw;
-
+    
+                .form_button_div {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 65vw;
+    
                     .form_button {
                         margin-top: 20px;
                     }
-            //     }
-            // }
-
-            .error_text_div_flex {
-                display: flex;
-                justify-content: center;
-                .error_text_div {
-                    width: 72vw;
                 }
             }
-
 
         }
 

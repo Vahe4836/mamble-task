@@ -1,3 +1,12 @@
-.hide_completed_div{
-    width: 95vw;
+// Imports
+
+@import '../Media_SCSS/Breakpoints.scss';
+@import '../Media_SCSS/Variables.scss';
+
+// Media
+
+@include Bg_mobile(){
+    .hide_completed_div{
+        width: 90vw;
+    }
 }

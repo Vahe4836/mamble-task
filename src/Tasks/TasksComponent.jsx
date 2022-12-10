@@ -10,13 +10,19 @@ export default function TasksComponent({todos, setTodo, openPopUp, setOpenPopUp,
 
     // setTodosLength(todos.length);
 
+    localStorage.setItem("todos", JSON.stringify(todos));
+
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+
     return (
         <article>
             {
-                todos.length === 0 ?
+                storedTodos.length === 0 ?
                     <StartPageText /> :
                     <Tasks
                         todos={todos}
+                        storedTodos={storedTodos}
+                        // setStoredTodos={setStoredTodos}
                         // setTodo={setTodo}
                         openPopUp={openPopUp}
                         setOpenPopUp={setOpenPopUp}

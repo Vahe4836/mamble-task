@@ -1,4 +1,4 @@
-import { useState,useReducer } from "react";
+import { useState,useEffect,useReducer } from "react";
 import Form from "../Form/Form";
 import HideCompleted from "../HideCompletedComponent/HideCompleted";
 // import PopUp from "../PopUpComponent/PopUp";
@@ -61,6 +61,27 @@ export default function Main() {
 
     const [openPopUp,setOpenPopUp] = useState(false);
 
+    // const [storedTodos, setStoredTodos] = useState();   
+
+    // useEffect(() => {
+    //     localStorage.setItem("todos", JSON.stringify(todos));
+    // }, [todos.length]);
+
+    // localStorage.setItem("todos", JSON.stringify(todos));
+    
+
+    // const [storedTodos, setStoredTodos] = useState(todos);
+
+    // setStoredTodos(JSON.parse(localStorage.getItem("todos")))
+
+    // let ob = localStorage.getItem("todos");
+
+    // let loc = Object.values(ob)
+
+    // let storedTodos = JSON.parse(localStorage.getItem("todos"));
+
+    // alert(storedTodos);
+
     // const [todo,setTodo] = useState();
 
 
@@ -86,7 +107,8 @@ export default function Main() {
                 <div className="main">
 
                     <HideCompleted
-                        todos={todos}
+                        // todos={todos}
+                        // storedTodos={storedTodos}
                         onHideCompleted={() => {
                             dispatch({
                                 type: "hide-completed"
@@ -108,6 +130,9 @@ export default function Main() {
                     <TasksComponent
 
                         todos={todos}
+
+                        // storedTodos={storedTodos}
+                        // setStoredTodos={setStoredTodos}
                         // setTodo={setTodo}
                         openPopUp={openPopUp}
                         setOpenPopUp={setOpenPopUp}

@@ -3,12 +3,14 @@ import TaskItem from './TaskItem/TaskItem';
 import './Tasks.scss';
 
 
-export default function Tasks({ todos, setTodo, openPopUp, setOpenPopUp, onChange, onDelete }) {
+export default function Tasks({ storedTodos, setTodo, openPopUp, setOpenPopUp, onChange, onDelete }) {
+
+   
 
     return (
         <div className='tasks_div'>
             {
-                todos.map((todo) => {
+                storedTodos.map((todo) => {
 
                     return (
                         <>

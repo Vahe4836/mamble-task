@@ -15,12 +15,12 @@
 
 @include Laptop {
     .tasks_div {
-        width: 95vw;
+        width: 100vw;
     }
 }
 
-@include Bg_mobile {
-    .tasks_div {
-        width: 97vw;
-    }
-}
+// @include Bg_mobile {
+//     .tasks_div {
+//         width: 100vw;
+//     }
+// }

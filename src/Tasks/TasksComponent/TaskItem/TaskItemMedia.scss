@@ -7,7 +7,7 @@
 
 @include Laptop {
     .task_div{
-        width: 85vw;
+        // width: 95vw;
         .task{
             width: 80vw;
         }
@@ -17,9 +17,9 @@
 
 @include Bg_mobile(){
     .task_div{
-        width: 85vw;
+        // width: 100vw;
         .task{
-            width: 86vw;
+            width: 90vw;
             .task_text{
                 width: 72vw;
             }
