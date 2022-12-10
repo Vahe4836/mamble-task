@@ -1,6 +1,7 @@
 import './StartPageText.scss';
 import './StartPageTextMedia.scss';
 
+// Start Page component
 
 export default function StartPageText(){
     return(

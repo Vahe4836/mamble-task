@@ -1,9 +1,8 @@
 import './PopUp.scss';
 
+// Pop-up component
 
-
-export default function PopUp({ todo,openPopUp,onDelete,setOpenPopUp }) {
-
+export default function PopUp({ todo,onDelete,setOpenPopUp }) {
 
 
     return (

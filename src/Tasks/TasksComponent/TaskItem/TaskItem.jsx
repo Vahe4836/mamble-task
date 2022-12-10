@@ -1,7 +1,7 @@
 import './TaskItem.scss';
 import './TaskItemMedia.scss';
 
-
+// TaskItem component
 
 export default function TaskItem({ todo, display, todos, openPopUp, setOpenPopUp, onChange }) {
 
@@ -43,5 +43,3 @@ export default function TaskItem({ todo, display, todos, openPopUp, setOpenPopUp
         </div>
     )
 }
-
-//Web development, C++ developer, Javascript developer

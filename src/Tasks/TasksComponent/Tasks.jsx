@@ -1,10 +1,9 @@
-import PopUp from '../../PopUpComponent/PopUp';
 import TaskItem from './TaskItem/TaskItem';
 import './Tasks.scss';
 
+// Tasks component
 
-export default function Tasks({ storedTodos, setTodo, openPopUp, setOpenPopUp, onChange, onDelete }) {
-
+export default function Tasks({ storedTodos, openPopUp, setOpenPopUp, onChange}) {
 
 
     return (

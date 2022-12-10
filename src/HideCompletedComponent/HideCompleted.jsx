@@ -1,9 +1,9 @@
 import './HideCompleted.scss';
 import './HideCompletedMedia.scss';
 
+// Hide completed component
 
-
-export default function HideCompleted({ onHideCompleted,hiden,setHiden,}) {
+export default function HideCompleted({ onHideCompleted,hidden,setHidden}) {
     return (
         <div className='hide_completed_div'>
             <div className='hide_completed'>
@@ -11,10 +11,10 @@ export default function HideCompleted({ onHideCompleted,hiden,setHiden,}) {
                     <input
                         type="checkbox"
                         className='hide_completed_checkbox'
-                        checked={hiden}
+                        checked={hidden}
                         onChange={(evt) => {
-                            onHideCompleted(hiden);
-                            setHiden(evt.target.checked);
+                            onHideCompleted(hidden);
+                            setHidden(evt.target.checked);
                         }}
                     />
                     <span className='hide_completed_text'>Hide completed</span>

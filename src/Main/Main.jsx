@@ -1,14 +1,11 @@
-import { useState,useEffect,useReducer } from "react";
+import { useState,useReducer } from "react";
 import Form from "../Form/Form";
 import HideCompleted from "../HideCompletedComponent/HideCompleted";
-import PopUp from "../PopUpComponent/PopUp";
 import PopUpOpacity from "../PopUpComponent/PopUpOpacity";
-// import PopUp from "../PopUpComponent/PopUp";
-// import PopUpOpacity from "../PopUpOpacity.jsx/PopUpOpacity";
 import TasksComponent from "../Tasks/TasksComponent";
 import './Main.scss';
 
-
+// Reducers
 
 function reducer(state,action) {
     if (action.type === "add") {
@@ -24,8 +21,11 @@ function reducer(state,action) {
     } else if (action.type === "delete") {
         return state.filter((t) => t.id !== action.payload.id);
     } else if (action.type === "hide-completed") {
+
+        // 
+
         return state.map((todo) => {
-            if (!action.payload.hiden) {
+            if (!action.payload.hidden) {
                 if (todo.isCompleted) {
                     return {
                         ...todo,
@@ -53,17 +53,16 @@ function reducer(state,action) {
 }
 
 
+// Main component
+
 
 export default function Main() {
-
 
     const storedTodos = JSON.parse(localStorage.getItem("todos"));
 
     const [todos,dispatch] = useReducer(reducer, storedTodos);
-
     const [openPopUp,setOpenPopUp] = useState(false);
-
-    const [hiden,setHiden] = useState(false);
+    const [hidden,setHidden] = useState(false);
 
     localStorage.setItem("todos",JSON.stringify(todos));
 
@@ -71,6 +70,9 @@ export default function Main() {
 
     return (
         <>
+
+        {/* Pop-up background component */}
+
             <PopUpOpacity
 
                 storedTodos={storedTodos}
@@ -93,13 +95,13 @@ export default function Main() {
                 <div className="main">
 
                     <HideCompleted
-                        hiden={hiden}
-                        setHiden={setHiden}
-                        onHideCompleted={(hiden) => {
+                        hiden={hidden}
+                        setHiden={setHidden}
+                        onHideCompleted={(hidden) => {
                             dispatch({
                                 type: "hide-completed",
                                 payload: {
-                                    hiden: hiden
+                                    hidden: hidden
                                 }
                             });
                         }}
@@ -118,11 +120,7 @@ export default function Main() {
 
                     <TasksComponent
 
-                        // todos={todos}
-
                         storedTodos={storedTodos}
-                        // setStoredTodos={setStoredTodos}
-                        // setTodo={setTodo}
                         openPopUp={openPopUp}
                         setOpenPopUp={setOpenPopUp}
 
