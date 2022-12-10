@@ -16,9 +16,6 @@ export default function Form({ onAdd }) {
         <div className='form_div'>
 
 
-            {/* Skzbuuuum havaaaqeeel diverov heto media */}
-
-
             <div className="form">
                 {/* <div className='form_elements'> */}
                 <form onSubmit={(evt) => {

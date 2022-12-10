@@ -4,7 +4,7 @@ import Tasks from "./TasksComponent/Tasks";
 
 
 
-export default function TasksComponent({todos, setTodo, openPopUp, setOpenPopUp, onChange, onDelete}) {
+export default function TasksComponent({ todos, setTodo, openPopUp, setOpenPopUp, onChange, onDelete}) {
 
     // const [todosLength, setTodosLength] = useState(0);
 
@@ -26,6 +26,7 @@ export default function TasksComponent({todos, setTodo, openPopUp, setOpenPopUp,
                         // setTodo={setTodo}
                         openPopUp={openPopUp}
                         setOpenPopUp={setOpenPopUp}
+
                         // todosLength={todosLength}
                         onDelete={onDelete}
                         onChange={onChange}

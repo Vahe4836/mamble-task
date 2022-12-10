@@ -1,4 +1,4 @@
-import { useState,useEffect,useReducer } from "react";
+import { useState, useEffect, useReducer } from "react";
 import Form from "../Form/Form";
 import HideCompleted from "../HideCompletedComponent/HideCompleted";
 // import PopUp from "../PopUpComponent/PopUp";
@@ -9,13 +9,14 @@ import './MainMedia.scss';
 
 
 
-function reducer(state,action) {
+function reducer(state, action) {
     if (action.type === "add") {
         return [
             {
                 id: Math.random(),
                 text: action.payload.text,
-                isCompleted: false
+                isCompleted: false,
+                display: false
             },
             ...state
         ];
@@ -23,9 +24,22 @@ function reducer(state,action) {
         return state.filter((t) => t.id !== action.payload.id);
     } else if (action.type === "hide-completed") {
         return state.map((todo) => {
-            if(todo.isCompleted){
-                todo.display = 'none'
+            if (!action.payload.hiden) {
+                if (todo.isCompleted) {
+                    return {
+                        ...todo,
+                        display: true
+                    }
+                }
+            } else {
+                if (todo.isCompleted) {
+                    return {
+                        ...todo,
+                        display: false
+                    }
+                }
             }
+            return todo;
         });
     } else if (action.type === "update") {
         return state.map((todo) => {
@@ -41,25 +55,30 @@ function reducer(state,action) {
 
 export default function Main() {
 
-    const [todos,dispatch] = useReducer(reducer,[
+    const [todos, dispatch] = useReducer(reducer, [
         {
             id: Math.random(),
             text: "Learn JS",
-            isCompleted: false
+            isCompleted: false,
+            display: false
         },
         {
             id: Math.random(),
             text: "Learn CSS",
-            isCompleted: false
+            isCompleted: false,
+            display: false
         },
         {
             id: Math.random(),
             text: "Learn React",
-            isCompleted: false
+            isCompleted: false,
+            display: false
         }
     ]);
 
-    const [openPopUp,setOpenPopUp] = useState(false);
+    const [openPopUp, setOpenPopUp] = useState(false);
+
+    const [hiden, setHiden] = useState(false);
 
     // const [storedTodos, setStoredTodos] = useState();   
 
@@ -68,7 +87,7 @@ export default function Main() {
     // }, [todos.length]);
 
     // localStorage.setItem("todos", JSON.stringify(todos));
-    
+
 
     // const [storedTodos, setStoredTodos] = useState(todos);
 
@@ -81,8 +100,6 @@ export default function Main() {
     // let storedTodos = JSON.parse(localStorage.getItem("todos"));
 
     // alert(storedTodos);
-
-    // const [todo,setTodo] = useState();
 
 
     return (
@@ -109,9 +126,14 @@ export default function Main() {
                     <HideCompleted
                         // todos={todos}
                         // storedTodos={storedTodos}
-                        onHideCompleted={() => {
+                        hiden={hiden}
+                        setHiden={setHiden}
+                        onHideCompleted={(hiden) => {
                             dispatch({
-                                type: "hide-completed"
+                                type: "hide-completed",
+                                payload: {
+                                    hiden: hiden
+                                }
                             });
                         }}
                     />
