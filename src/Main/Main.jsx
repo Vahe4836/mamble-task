@@ -106,8 +106,8 @@ export default function Main() {
                 <div className="main">
 
                     <HideCompleted
-                        hiden={hidden}
-                        setHiden={setHidden}
+                        hidden={hidden}
+                        setHidden={setHidden}
                         onHideCompleted={(hidden) => {
                             dispatch({
                                 type: "hide-completed",
