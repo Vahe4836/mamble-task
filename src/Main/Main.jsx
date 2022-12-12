@@ -1,3 +1,12 @@
+//                                 Intro
+                      
+// With the help of this program you can write and add your tasks, //
+// you can also delete them. With the help of the "Hide Completed" button, //
+// you can hide from the screen those tasks that have already been completed. // 
+// After updating and closing the website, your task list is saved, //
+// which makes your work with the program easier and saves you time. //
+// Thank you for using our program.Have a nice working day) //
+
 import { useState, useReducer } from "react";
 import Form from "../Form/Form";
 import HideCompleted from "../HideCompletedComponent/HideCompleted";
@@ -7,6 +16,7 @@ import './Main.scss';
 
 
 // Reducers
+
 
 function reducer(state, action) {
     if (action.type === "add") {
@@ -121,8 +131,8 @@ export default function Main() {
                                 }
                             });
                         }}
-
                     />
+
                 </div>
             </div>
         </>

@@ -3,7 +3,7 @@ import './PopUpOpacity.scss';
 
 // Pop-up background component
 
-export default function PopUpOpacity({ storedTodos, openPopUp,setOpenPopUp,onDelete }) {
+export default function PopUpOpacity({ storedTodos, openPopUp, setOpenPopUp, onDelete }) {
 
 
     return (
